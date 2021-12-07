@@ -20,10 +20,10 @@ galleryRef.style.listStyleType = 'none';
 
 
 const imagesEl = images.map(image => {
-  return galleryRef.insertAdjacentHTML('afterbegin', `<li><img src = ${image.url} alt = ${image.alt} width ='150'></img></li>`)
+  return galleryRef.insertAdjacentHTML('afterbegin', `<li><img src = ${image.url} alt = ${image.alt} width ='150' height = '100'></img></li>`)
 }).join('');
 
-galleryRef.append(galleryList);
+galleryRef.append(imagesEl);
 
  
 

@@ -6,24 +6,17 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
-const ingredientsListRef = document.getElementById("ingredients");
+const ingredientsList = document.getElementById('ingredients');
+console.log(ingredientsList);
 
-const ingredientsEl = ingredients.map(ingredient => {
-  const ingredientsList = document.createElement('li');
-  ingredientsList.classList.add('item');
-  ingredientsList.textContent = ingredient;
+const fragmentList = document.createDocumentFragment();
 
-  return ingredientsList;
+ingredients.forEach(ingredient => {
+  const ingredientsListElement = document.createElement('li');
+  ingredientsListElement.textContent = ingredient;
+  ingredientsListElement.classList.add('item');
+  fragmentList.append(ingredientsListElement);
 });
-console.log(ingredientsEl);
 
-// for (let i = 0; i < ingredients.length; i +=1 ) {
-//   const ingredientsList = document.createElement('li');
-//   ingredientsList.classList.add('item');
-//   ingredientsList.textContent = ingredients[i];
-//   ingredientsEl.push(ingredientsList);
- 
-// }
-
-
-ingredientsListRef.append(...ingredientsEl);
+ingredientsList.append(fragmentList);
+console.log(fragmentList);
