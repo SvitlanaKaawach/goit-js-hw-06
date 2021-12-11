@@ -19,11 +19,13 @@ galleryRef.style.gridTemplateColumns = "170px 170px 170px";
 galleryRef.style.listStyleType = 'none';
 
 
-const imagesEl = images.map(image => {
-  return galleryRef.insertAdjacentHTML('afterbegin', `<li><img src = ${image.url} alt = ${image.alt} width ='150' height = '100'></img></li>`)
-}).join('');
+const imagesEl = images
+  .map(
+    ({ url, alt }) =>
+ `<li class = "item"><img src = "${url}" alt = "${alt}" width ="150" height = "100"></li>`)
+.join('');
+galleryRef.insertAdjacentHTML('afterbegin',imagesEl );
 
-galleryRef.append(imagesEl);
 
  
 
