@@ -1,12 +1,13 @@
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-}
+
 const refs={ 
  buttonCreate: document.querySelector('[data-create]'),
  buttonDestroy: document.querySelector('[data-destroy]'),
  newBox: document.querySelector('#boxes'),
 }
 
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
 
 refs.buttonCreate.addEventListener('click', createBox);
 refs.buttonDestroy.addEventListener('click', destroyBoxes);
@@ -21,18 +22,21 @@ function createBoxes(amount) {
   let basicSize = 30;
   const fragment = document.createDocumentFragment();
   for (let i = 0; i < amount; i += 1) { 
-    let size = basicSize + i * 10;
-    let div = document.createElement('div');
+    const div = document.createElement('div');
     const currentColor = getRandomHexColor();
     div.style.backgroundColor = currentColor;
-    div.style.width = `${size} px`;
-    div.style.height = `${size} px`;
+    div.style.width = basicSize + '5px';
+    div.style.height = basicSize + 'px';
+    div.style.marginTop = '10px';
     fragment.appendChild(div);
+    basicSize += 10;
+    refs.newBox.append(fragment);
   }
-  refs.newBox.append(fragment);
+ 
 }
 
-function destroyBoxes () {
+function destroyBoxes() {
+  
   refs.newBox.innerHTML = '';
 }
 
