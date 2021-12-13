@@ -2,7 +2,8 @@
 const refs={ 
  buttonCreate: document.querySelector('[data-create]'),
  buttonDestroy: document.querySelector('[data-destroy]'),
- newBox: document.querySelector('#boxes'),
+  newBox: document.querySelector('#boxes'),
+ input: document.querySelector('#controls input'),
 }
 
 function getRandomHexColor() {
@@ -13,7 +14,7 @@ refs.buttonCreate.addEventListener('click', createBox);
 refs.buttonDestroy.addEventListener('click', destroyBoxes);
 
 function createBox() {
-  let amount = + document.querySelector('#controls input').value;
+  let amount = refs.input.value;
   createBoxes(amount);
   
 }
@@ -25,8 +26,8 @@ function createBoxes(amount) {
     const div = document.createElement('div');
     const currentColor = getRandomHexColor();
     div.style.backgroundColor = currentColor;
-    div.style.width = basicSize + '5px';
-    div.style.height = basicSize + 'px';
+    div.style.width = basicSize +'px';
+    div.style.height = basicSize +'px';
     div.style.marginTop = '10px';
     fragment.appendChild(div);
     basicSize += 10;
