@@ -2,10 +2,10 @@ let inputEl = document.getElementById('name-input');
 let outputEl = document.getElementById('name-output');
 
 function fillIn(event) {
-    if(inputEl !== ''){
-        outputEl.textContent = event.currentTarget.value;
+    if(event.currentTarget.value === ''){
+        outputEl.textContent = "Anonymous";
     }
-    else { outputEl.textContent = "Anonymous";}
+    else { outputEl.textContent = event.currentTarget.value;}
    
    
 }
