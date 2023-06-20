@@ -4,6 +4,6 @@ function fillIn(event) {
     if(inputEl.textContent ===''){
         outputEl.textContent = "Anonymous";
     }
-    else { outputEl.textContent = event.currentTarget.value;}}
+    else { outputEl.textContent = currentTarget.value;}}
     
 inputEl.addEventListener('input', fillIn);
