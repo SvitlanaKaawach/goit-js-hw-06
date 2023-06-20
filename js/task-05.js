@@ -1,8 +1,9 @@
-const refs = {
-  input: document.querySelector('#name-input'),
-  span: document.querySelector('#name-input'),
+const inputRef = document.querySelector('#name-input');
+const outputRef = document.querySelector('#name-output');
+
+inputRef.addEventListener('input', onInputChange);
+
+
+function onInputChange(event) {
+    outputRef.textContent = event.currentTarget.value.trim() === "" ? "Anonymous" : event.currentTarget.value;
 };
-refs.input.addEventListener('input', onChange);
-function onChange(event) {
-  refs.span.textContent = event.target.value;
-}
