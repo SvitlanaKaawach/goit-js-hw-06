@@ -5,7 +5,7 @@ function fillIn(event) {
     if(inputEl.textContent === ''){
         outputEl.textContent = "Anonymous";
     }
-    else { outputEl.textContent = event.currentTarget.value;}
+    else { outputEl.textContent = event.currentTarget.value.trim();}
    
    
 }
