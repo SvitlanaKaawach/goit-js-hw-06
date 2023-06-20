@@ -1,9 +1,8 @@
-const inputEl = document.getElementById('name-input');
-const outputEl = document.getElementById('name-output');
-function fillIn(event) {
-    if(inputEl.textContent ===''){
-        outputEl.textContent = "Anonymous";
-    }
-    else { outputEl.textContent = currentTarget.value;}}
-    
-inputEl.addEventListener('input', fillIn);
+const refs = {
+  input: document.querySelector('#name-input'),
+  span: document.querySelector('#name-input'),
+};
+refs.input.addEventListener('input', onChange);
+function onChange(event) {
+  refs.span.textContent = event.target.value;
+}
